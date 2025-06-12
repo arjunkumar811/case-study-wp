@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ChevronLeft, ChevronRight, Star } from "lucide-react"
-import Image from "next/image"
+import { useState } from "react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
   {
     id: 1,
     name: "Floyd Miles",
     company: "eBay",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/image6.png",
     quote:
       "Synergy's resume builder is fantastic. It helped me create a professional resume that stood out to employers. Synergy's resume builder is fantastic. It helped me create a professional resume that stood out to employers.",
   },
@@ -17,7 +17,7 @@ const testimonials = [
     id: 2,
     name: "Jane Smith",
     company: "Google",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/image6.png",
     quote:
       "The design process was seamless and the final result exceeded my expectations. Highly recommend their services.",
   },
@@ -25,24 +25,26 @@ const testimonials = [
     id: 3,
     name: "John Doe",
     company: "Microsoft",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/image6.png",
     quote:
       "Professional, creative, and delivered exactly what we needed. The team's attention to detail is remarkable.",
   },
-]
+];
 
 export default function TestimonialComponent() {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length)
-  }
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
-  }
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+    );
+  };
 
-  const currentTestimonial = testimonials[currentIndex]
+  const currentTestimonial = testimonials[currentIndex];
 
   return (
     <section className="bg-[#010208] py-16 px-4 md:py-24">
@@ -50,7 +52,9 @@ export default function TestimonialComponent() {
         {/* Header */}
         <div className="flex items-center gap-4 mb-16">
           <Star className="w-6 h-6 text-white fill-white" />
-          <h2 className="text-white text-2xl md:text-3xl font-light">What they say</h2>
+          <h2 className="text-white text-2xl md:text-3xl font-light">
+            What they say
+          </h2>
         </div>
 
         {/* Testimonial Content */}
@@ -66,8 +70,12 @@ export default function TestimonialComponent() {
               />
             </div>
             <div>
-              <h3 className="text-white text-xl md:text-2xl font-medium">{currentTestimonial.name}</h3>
-              <p className="text-gray-400 text-base md:text-lg">{currentTestimonial.company}</p>
+              <h3 className="text-white text-xl md:text-2xl font-medium">
+                {currentTestimonial.name}
+              </h3>
+              <p className="text-gray-400 text-base md:text-lg">
+                {currentTestimonial.company}
+              </p>
             </div>
           </div>
 
@@ -76,7 +84,9 @@ export default function TestimonialComponent() {
             <div className="text-6xl md:text-8xl text-gray-600 absolute -top-4 -left-2 md:-top-6 md:-left-4 leading-none">
               "
             </div>
-            <p className="text-white text-lg md:text-xl leading-relaxed pl-8 md:pl-12">{currentTestimonial.quote}</p>
+            <p className="text-white text-lg md:text-xl leading-relaxed pl-8 md:pl-12">
+              {currentTestimonial.quote}
+            </p>
           </div>
         </div>
 
@@ -99,5 +109,5 @@ export default function TestimonialComponent() {
         </div>
       </div>
     </section>
-  )
+  );
 }
