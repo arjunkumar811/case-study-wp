@@ -23,7 +23,13 @@ export default function Banner() {
                     src="/image1.jpg"
                     alt="Designer Profile"
                     fill
-                    style={{ objectFit: "cover", border: "2px solid white" }}
+                    sizes="128px"
+                    priority
+                    style={{
+                      objectFit: "cover",
+                      border: "2px solid white",
+                      borderRadius: 100,
+                    }}
                   />
                 </div>
               </span>{" "}
@@ -39,7 +45,13 @@ export default function Banner() {
                     src="/image2.png"
                     alt="Design Element"
                     fill
-                    style={{ objectFit: "cover", border: "2px solid white" }}
+                    sizes="128px"
+                    priority
+                    style={{
+                      objectFit: "cover",
+                      border: "2px solid white",
+                      borderRadius: 100,
+                    }}
                   />
                 </div>
               </span>{" "}
